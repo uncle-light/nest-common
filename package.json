@@ -4,6 +4,7 @@
   "description": "nest",
   "author": "c-uncle",
   "license": "ISC",
+  "main": "libs/index.js",
   "scripts": {
     "clean": "rm -rf ./libs",
     "build": "rm -rf ./libs && tsc -p tsconfig.json",

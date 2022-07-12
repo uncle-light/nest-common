@@ -3,7 +3,7 @@ import {
   DocumentBuilder,
   SwaggerCustomOptions,
   SwaggerModule,
-} from '@nestjs/swagger/dist';
+} from '@nestjs/swagger';
 
 export function setupSwagger(app: INestApplication, port?: number): void {
   const swaggerConfig = new DocumentBuilder()

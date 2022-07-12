@@ -1,19 +1,19 @@
 {
   "name": "@c-uncle/nest-common",
   "version": "0.0.1",
-  "description": "",
-  "private": true,
+  "description": "nest",
   "author": "c-uncle",
   "license": "ISC",
   "scripts": {
     "clean": "rm -rf ./libs",
-    "build":"rm -rf ./libs && tsc -p tsconfig.json",
+    "build": "rm -rf ./libs && tsc -p tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
+    "@nestjs/swagger": "^6.0.2",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
@@ -21,6 +21,7 @@
     "webpack": "^5.0.0"
   },
   "devDependencies": {
+    
     "@nestjs/cli": "^9.0.0",
     "@nestjs/schematics": "^9.0.0",
     "@nestjs/testing": "^9.0.0",
@@ -41,6 +42,8 @@
     "ts-loader": "^9.2.3",
     "ts-node": "^10.0.0",
     "tsconfig-paths": "4.0.0",
+    "@types/bytes": "^3.1.1",
+    "@types/request-ip": "^0.0.37",
     "typescript": "^4.3.5"
   },
   "engines": {

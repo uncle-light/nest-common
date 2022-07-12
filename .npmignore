@@ -1,6 +1,10 @@
+/src
+.eslintrc.js
+*.log
+
+
 # compiled output
 /dist
-/libs
 /node_modules
 
 # Logs

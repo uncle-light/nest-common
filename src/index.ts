@@ -12,3 +12,5 @@ export * from './interceptor';
 export * from './middleware';
 
 export * from './swagger/setup-swagger';
+
+export * from './util/common.util';

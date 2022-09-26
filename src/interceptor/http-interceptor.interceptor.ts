@@ -42,9 +42,8 @@ export class HttpInterceptor implements NestInterceptor {
     Time: ${Date.now() - req.timestamp} ms
     Response data: ${dataString}\n  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<`;
         if (!this.reflector.get(NO_LOG, context.getHandler())) {
-          this.logger.debug(logFormat);
+          this.logger.log(logFormat);
         }
-        this.logger.log(logFormat);
         return {
           data,
           code: 200,

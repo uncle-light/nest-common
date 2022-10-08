@@ -1,13 +1,13 @@
 {
   "name": "@c-uncle/nest-common",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "nest",
   "author": "c-uncle",
   "license": "ISC",
   "main": "dist/index.js",
   "scripts": {
     "clean": "rm -rf ./lib",
-    "publish:latest":  "npm run build &&  npm publish --access public --tag latest",
+    "publish:latest": "npm run build &&  npm publish --access public --tag latest",
     "prepublish:npm": "npm run build",
     "build": "rm -rf dist && tsc --project tsconfig.lib.json",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,6 +15,7 @@
   "dependencies": {
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.0.0",
+    "@nestjs/microservices": "^9.1.4",
     "@nestjs/platform-express": "^9.0.0",
     "@nestjs/swagger": "^6.0.2",
     "bytes": "^3.1.2",

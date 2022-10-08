@@ -11,10 +11,8 @@ import { Logger } from '@nestjs/common';
 import { logFormat } from '../util/log-format';
 @Injectable()
 export class HttpInterceptor implements NestInterceptor {
-  constructor(
-    private readonly reflector: Reflector,
-    private readonly logger: Logger,
-  ) {}
+  private logger = new Logger(HttpInterceptor.name);
+  constructor(private readonly reflector: Reflector) {}
   intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
     const req = context.getArgByIndex(1).req;
     return next.handle().pipe(

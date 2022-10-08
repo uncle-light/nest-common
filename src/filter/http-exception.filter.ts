@@ -28,7 +28,7 @@ export class HttpExceptionFilter implements ExceptionFilter {
           : exceptionResponse.message;
     }
     const errorResponse = {
-      errorMessage: validatorMessage ?? message,
+      message: validatorMessage ?? message,
       code: status,
       path: req.url,
       RequestId: req.uuid,

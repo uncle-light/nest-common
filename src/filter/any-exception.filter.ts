@@ -19,19 +19,20 @@ export class AllExceptionsFilter implements ExceptionFilter {
       exception instanceof HttpException
         ? exception.getStatus()
         : HttpStatus.INTERNAL_SERVER_ERROR;
-    this.logger.error(
-      logFormat(req, exception, status, req.uuid, req.timestamp),
-      exception.stack,
-    );
     const errorResponse = {
       code: status,
       requestID: req.uuid,
-      errorMessage:
+      message:
         process.env.NODE_ENV === 'production'
           ? '网络开小差了啦～'
           : exception.message,
       timestamp: Date.now(),
     };
+    this.logger.error(
+      logFormat(req, errorResponse, status, req.uuid, req.timestamp),
+      exception.stack,
+    );
+
     response.status(HttpStatus.OK).json(errorResponse);
   }
 }

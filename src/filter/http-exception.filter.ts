@@ -37,11 +37,11 @@ export class HttpExceptionFilter implements ExceptionFilter {
 
     if (status !== 200) {
       this.logger.error(
-        logFormat(req, errorResponse, status, req.requestID, req.timestamp),
+        logFormat(req, errorResponse, status, req.uuid, req.timestamp),
       );
     } else {
       this.logger.log(
-        logFormat(req, errorResponse, status, req.requestID, req.timestamp),
+        logFormat(req, errorResponse, status, req.uuid, req.timestamp),
       );
     }
     // 设置返回的状态码， 请求头，发送错误信息

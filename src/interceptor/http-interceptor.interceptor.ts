@@ -28,7 +28,7 @@ export class HttpInterceptor implements NestInterceptor {
         };
         if (!this.reflector.get(NO_LOG, context.getHandler())) {
           this.logger.log(
-            logFormat(req, response, 200, req.requestID, req.timestamp),
+            logFormat(req, response, 200, req.uuid, req.timestamp),
           );
         }
         return response;

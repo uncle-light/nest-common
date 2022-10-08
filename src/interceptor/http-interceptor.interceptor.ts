@@ -17,7 +17,6 @@ export class HttpInterceptor implements NestInterceptor {
   ) {}
   intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
     const req = context.getArgByIndex(1).req;
-    // Time: ${Date.now() - req.timestamp} ms
     return next.handle().pipe(
       map((data) => {
         const response = {

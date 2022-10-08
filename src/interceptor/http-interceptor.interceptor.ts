@@ -11,10 +11,13 @@ import { Logger } from '@nestjs/common';
 import { logFormat } from '../util/log-format';
 @Injectable()
 export class HttpInterceptor implements NestInterceptor {
-  private logger = new Logger(HttpInterceptor.name);
-  constructor(private readonly reflector: Reflector) {}
+  constructor(
+    private readonly reflector: Reflector,
+    private readonly logger: Logger,
+  ) {}
   intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
     const req = context.getArgByIndex(1).req;
+    // Time: ${Date.now() - req.timestamp} ms
     return next.handle().pipe(
       map((data) => {
         const response = {
